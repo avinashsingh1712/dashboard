@@ -1,0 +1,383 @@
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+ 
+<script src="https://code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>
+
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css" />
+<head>
+  <meta http-equiv="refresh" content="20">
+</head>
+<style>
+#rootCause > div {
+   width: 75px;
+    height: 75px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    margin:10px 0 0 -10px; 
+		border: 1px solid #000;
+   
+}
+
+.innerDiv {
+    position: relative;
+    float: left;
+    top: 50%;
+    left: 52%;
+    transform: translate(-50%, -50%);
+	 overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.red {
+background-color: #FF6666;
+}
+
+.green {
+background-color: #009900;
+}
+
+.amber {
+background-color: #ffbf00;
+}
+
+.brown {
+background-color: #8D8E4E;
+}
+
+#alertTable td {
+background-color: lightskyblue;
+}
+
+.blue {
+background-color: #8D8EEA;
+}
+
+.grey {
+background-color: #cccccc;
+}
+
+.yellow {
+background-color: #FFFF00;
+}
+
+.white {
+background-color: #ffffff;
+}
+
+#rootCause td 
+{
+    text-align: center; 
+    vertical-align: middle;
+}
+
+ 
+
+#alert div p {
+width: 15%;
+height: 15%;
+  text-align:center; 
+  vertical-align: middle;
+  display: table-cell; 
+  padding: 4px;
+  word-break: break-word;
+}
+
+#alert {
+width: 20%;
+margin: 3%;
+margin-top: 3.5%;
+}
+
+#alert > div {
+    width: 100%;
+    border: 1px solid;
+}
+
+#alert, #rootCause {
+float: left
+}
+
+.innerDiv {
+    width: 36px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.rootText {
+    width: 200px;
+	margin-left: 100px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.arrow {
+    width:120px;
+    margin:50px auto;
+}
+
+.line {
+    margin-top:14px;
+    width:90px;
+    background:blue;
+    height:10px;
+    float:left;
+}
+.point {	
+    width: 0; 
+	height: 0; 
+	border-top: 20px solid transparent;
+	border-bottom: 20px solid transparent;
+	border-left: 30px solid blue;
+    float:right;
+}
+
+#main {
+    width: 98%;
+    height: 88% ;
+    border: black;
+    padding: 0;
+    border: 5px solid;
+	background: lightcyan;
+	margin-top: 0%
+}
+
+#myTable {
+margin: 6%;
+width: 100%
+}
+
+.child {
+margin-bottom: 10%
+}
+
+#rootCause {
+width: 60%
+}
+
+table {
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid black;
+}
+
+table {
+  border: 2px solid black;
+}
+table#t01 {   
+  background-color: #FFDAB9;
+}
+
+#legend {
+width: 50%;
+    clear: both;
+    margin-left: 34%
+}
+
+#rootCause {
+margin-left: 55px;
+}
+
+td {
+height: 33px;
+text-align: center; 
+    vertical-align: middle;
+}
+
+th {
+background-color: #cccccc;
+height: 33px;
+text-align: center; 
+    vertical-align: middle;
+}
+
+#legend td {
+height: 20px; 
+width: 70px;
+}
+
+
+#dialog1 {
+    max-height: 135px !important;
+}
+
+.ui-widget {
+    font-family: none !important;
+    font-size: 1.1em;
+}
+
+.red-text-color {
+color : red;
+}
+
+#legend td {
+height: 20px; 
+width: 70px;
+}
+
+.ui-dialog {
+width: 450px !important;
+    background: lightyellow;
+}
+
+#popUp1 {
+width: 100%
+}
+
+.ui-button:focus { outline:none !important } 
+
+</style>
+
+<br />
+<br />
+<div id="main">
+<div id='alert'>
+
+
+<table id="alertTable">
+<tr> 
+<th> Alert</th>
+<th> Shortname</th>
+<th> Count</th>
+</tr>
+<tr> 
+<td> pip_receipt_not_update</td>
+<td> PRNU</td>
+<td class="popUp1"></td>
+</tr>
+<tr> 
+<td> pip_itm_enrich_item_failed</td>
+<td> PIIF</td>
+<td class="popUp1"></td>
+</tr>
+
+<tr> 
+<td> pip_fiscal_report_not_delivered</td>
+<td> PFRND</td>
+<td class="popUp1"></td>
+</tr>
+
+<tr> 
+<td> pip_system_error</td>
+<td> PSE</td>
+<td class="popUp1"></td>
+</tr>
+<tr> 
+<td> pip_unknown_error </td>
+<td> PUER</td>
+<td class="popUp1"></td>
+</tr>
+<tr> 
+<td> pip_rtr_nak_receipt_critical </td>
+<td> PRNRC</td>
+<td class="popUp1"></td> 
+</tr>
+</table>
+</div>
+
+<div id='rootCause'>
+
+<table id="myTable">
+<tr> 
+<th> PRNU</th>
+<th> PIIF</th>
+<th> PFRND</th>
+<th> PSE</th>
+<th> PUER</th>
+<th> PRNRC</th>
+<th> RootCause</th>
+</tr>
+<tr> 
+<td> </td>
+<td> </td>
+<td></td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> PIA-OCAS Mapping issue</td>
+</tr>
+<tr> 
+<td> </td>
+<td> </td>
+<td></td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> FTP Connection Issue</td>
+</tr>
+
+<tr> 
+<td> </td>
+<td> </td>
+<td></td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> Order canceled not found</td>
+</tr>
+
+<tr> 
+<td> </td>
+<td> </td>
+<td></td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> N/W Connection issue</td>
+</tr>
+<tr> 
+<td> </td>
+<td> </td>
+<td></td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> Invoice Format Error</td>
+</tr>
+<tr> 
+<td> </td>
+<td> </td>
+<td></td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> Upstream Issue</td>
+</tr>
+</table>
+
+</div>
+
+  <div id='legend'>
+<table id="t01">
+  <tr>
+    <th>Alert Margin</th>
+    <th>Color</th> 
+  </tr>
+  <tr>
+    <td>Low</td>
+    <td bgcolor="#FFFF00">Yellow</td>
+  </tr>
+  <tr>
+    <td>Medium</td>
+    <td bgcolor="#ffbf00">Amber</td>
+  </tr>
+  <tr>
+    <td>High</td>
+    <td bgcolor="#FF6666">Red</td>
+  </tr>
+</table>
+</div> 
+<div id="dialog1" title="Alert Details" hidden="hidden"></div>
+<div id="dialog2" title="Alert by Country" hidden="hidden"></div>
+
+<!-- Code added by vartika starts -->
+<!-- <button onclick="sendAjaxRequest()" id="disableafter7">Load data from CSV file</button>  -->
+<!-- <button onclick="getData1()">Reload</button> -->
+<!-- Code added by vartika ends -->
+
+<script src="/js/index.js"></script>
+</div>
