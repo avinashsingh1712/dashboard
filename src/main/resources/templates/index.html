@@ -4,9 +4,9 @@
 <script src="https://code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>
 
 <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css" />
-<head>
+<!-- <head>
   <meta http-equiv="refresh" content="20">
-</head>
+</head> -->
 <style>
 #rootCause > div {
    width: 75px;
@@ -201,9 +201,6 @@ width: 70px;
 }
 
 
-#dialog1 {
-    max-height: 135px !important;
-}
 
 .ui-widget {
     font-family: none !important;
@@ -230,124 +227,23 @@ width: 100%
 
 .ui-button:focus { outline:none !important } 
 
+#popUp2 {
+margin-top: 10%
+}
+
+#dialog1 {
+max-height: 315px !important;
+}
+
 </style>
 
 <br />
 <br />
 <div id="main">
 <div id='alert'>
-
-
-<table id="alertTable">
-<tr> 
-<th> Alert</th>
-<th> Shortname</th>
-<th> Count</th>
-</tr>
-<tr> 
-<td> pip_receipt_not_update</td>
-<td> PRNU</td>
-<td class="popUp1"></td>
-</tr>
-<tr> 
-<td> pip_itm_enrich_item_failed</td>
-<td> PIIF</td>
-<td class="popUp1"></td>
-</tr>
-
-<tr> 
-<td> pip_fiscal_report_not_delivered</td>
-<td> PFRND</td>
-<td class="popUp1"></td>
-</tr>
-
-<tr> 
-<td> pip_system_error</td>
-<td> PSE</td>
-<td class="popUp1"></td>
-</tr>
-<tr> 
-<td> pip_unknown_error </td>
-<td> PUER</td>
-<td class="popUp1"></td>
-</tr>
-<tr> 
-<td> pip_rtr_nak_receipt_critical </td>
-<td> PRNRC</td>
-<td class="popUp1"></td> 
-</tr>
-</table>
 </div>
 
 <div id='rootCause'>
-
-<table id="myTable">
-<tr> 
-<th> PRNU</th>
-<th> PIIF</th>
-<th> PFRND</th>
-<th> PSE</th>
-<th> PUER</th>
-<th> PRNRC</th>
-<th> RootCause</th>
-</tr>
-<tr> 
-<td> </td>
-<td> </td>
-<td></td>
-<td> </td>
-<td> </td>
-<td> </td>
-<td> PIA-OCAS Mapping issue</td>
-</tr>
-<tr> 
-<td> </td>
-<td> </td>
-<td></td>
-<td> </td>
-<td> </td>
-<td> </td>
-<td> FTP Connection Issue</td>
-</tr>
-
-<tr> 
-<td> </td>
-<td> </td>
-<td></td>
-<td> </td>
-<td> </td>
-<td> </td>
-<td> Order canceled not found</td>
-</tr>
-
-<tr> 
-<td> </td>
-<td> </td>
-<td></td>
-<td> </td>
-<td> </td>
-<td> </td>
-<td> N/W Connection issue</td>
-</tr>
-<tr> 
-<td> </td>
-<td> </td>
-<td></td>
-<td> </td>
-<td> </td>
-<td> </td>
-<td> Invoice Format Error</td>
-</tr>
-<tr> 
-<td> </td>
-<td> </td>
-<td></td>
-<td> </td>
-<td> </td>
-<td> </td>
-<td> Upstream Issue</td>
-</tr>
-</table>
 
 </div>
 
@@ -371,13 +267,10 @@ width: 100%
   </tr>
 </table>
 </div> 
-<div id="dialog1" title="Alert Details" hidden="hidden"></div>
-<div id="dialog2" title="Alert by Country" hidden="hidden"></div>
+<div id="dialog1" title="Alert Details" hidden="hidden">
 
-<!-- Code added by vartika starts -->
-<!-- <button onclick="sendAjaxRequest()" id="disableafter7">Load data from CSV file</button>  -->
-<!-- <button onclick="getData1()">Reload</button> -->
-<!-- Code added by vartika ends -->
-
+<div id="dialog2"></div>
+</div>
+<div id="updated"> </div>
 <script src="/js/index.js"></script>
 </div>
